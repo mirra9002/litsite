@@ -220,6 +220,7 @@ const results = document.getElementById('results');
         event.preventDefault(); // Предотвращение стандартного действия (обновления страницы)
         inputField.value = ''; // Сброс ввода
         results.innerHTML = ''; // Очистка результатов поиска
+        inputField.focus();
       }
     });
 
