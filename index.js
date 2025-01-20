@@ -250,7 +250,7 @@ inputField.addEventListener('input', (event) => {
     Object.entries(data).forEach(([country, capital]) => {
       if (country.toLowerCase().startsWith(query)) {
         const countryRow = document.createElement('div');
-        countryRow.classList.add('flex',"justify-between", 'px-2', 'space-y-1', 'align-left', 'items-center', 'space-x-2');
+        countryRow.classList.add('flex',"justify-between", 'px-2', 'align-left', 'items-center', 'space-x-2');
         const countrySpan = document.createElement('span');
         countrySpan.textContent = country;
 
@@ -260,8 +260,8 @@ inputField.addEventListener('input', (event) => {
         capitalSpan.classList.add('font-bold', 'text-blue-950');
 
         // Append country span, dash span, and capital span to the container div
-        countrySpan.classList.add('text-neutral-800', 'text-2xl', 'transform', 'transition', 'duration-100', 'hover:scale-125');
-        capitalSpan.classList.add('text-neutral-800', 'text-2xl', 'transform', 'transition', 'duration-100', 'hover:scale-125');
+        countrySpan.classList.add('text-neutral-800', 'text-xl', 'transform', 'transition', 'duration-100', 'hover:scale-125');
+        capitalSpan.classList.add('text-neutral-800', 'text-xl', 'transform', 'transition', 'duration-100', 'hover:scale-125');
         countryRow.appendChild(countrySpan);
         countryRow.appendChild(capitalSpan);
 
