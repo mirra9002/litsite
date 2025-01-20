@@ -194,9 +194,11 @@ const data = {
 };
 
 const results = document.getElementById('results');
+    const inputField = document.getElementById('search');
+    const bt1 = document.getElementById('reset');
 
     // Обработчик ввода
-    document.getElementById('search').addEventListener('input', (event) => {
+    inputField.addEventListener('input', (event) => {
       const query = event.target.value.toLowerCase(); // Текст из поля ввода в нижнем регистре
       results.innerHTML = ''; // Очистить предыдущие результаты
 
@@ -207,18 +209,26 @@ const results = document.getElementById('results');
             const li = document.createElement('li');
             li.textContent = `${country} - ${capital}`;
             results.appendChild(li);
-            
           }
         });
       }
     });
 
+    // Обработчик Ctrl + R для сброса
     inputField.addEventListener('keydown', (event) => {
-        if (event.ctrlKey && event.key === 'r') { // Проверка комбинации Ctrl + R
-          event.preventDefault(); // Предотвращение стандартного действия (обновления страницы)
-          inputField.value = ''; // Сброс ввода
-          results.innerHTML = ''; // Очистка результатов поиска
-        }
-      });
+      if (event.ctrlKey && event.key === 'r') { // Проверка комбинации Ctrl + R
+        event.preventDefault(); // Предотвращение стандартного действия (обновления страницы)
+        inputField.value = ''; // Сброс ввода
+        results.innerHTML = ''; // Очистка результатов поиска
+      }
+    });
 
-      inputField.focus();
+    // Обработчик для кнопки Reset
+    bt1.addEventListener('click', () => {
+      inputField.value = ''; // Очистить поле ввода
+      results.innerHTML = ''; // Очистить список результатов
+      inputField.focus(); // Вернуть фокус на поле ввода
+    });
+
+    // Установить фокус на поле ввода при загрузке страницы
+    inputField.focus();
