@@ -192,6 +192,7 @@ const data = {
   "Судан": "Хартум",
   "Суринам": "Парамарібо",
   "Східний Тимор": "Ділі",
+  "Тимор": "Ділі",
   "США": "Вашингтон",
   "Америка": "Вашингтон",
   "Сьєрра-Леоне": "Фрітаун",
@@ -264,9 +265,6 @@ inputField.addEventListener('input', (event) => {
         capitalSpan.classList.add('text-neutral-800', 'text-xl', 'transform', 'transition', 'duration-100', 'hover:scale-125');
         countryRow.appendChild(countrySpan);
         countryRow.appendChild(capitalSpan);
-
-        // Append the container div to the li
-
 
         results.appendChild(countryRow);
       }
