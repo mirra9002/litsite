@@ -294,3 +294,17 @@ inputField.focus();
 
 // Установить фокус на поле ввода при загрузке страницы
 inputField.focus();
+
+// Select the text input and footer elements
+const textField = document.getElementById('search');
+const footer = document.querySelector('footer');
+
+// Add event listener for focus event to hide the footer
+textField.addEventListener('focus', () => {
+    footer.style.display = 'none';
+});
+
+// Add event listener for blur event to show the footer
+textField.addEventListener('blur', () => {
+    footer.style.display = 'block';
+});

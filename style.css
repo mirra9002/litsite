@@ -2,8 +2,9 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: 
-        radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%), /* White gradient circle */
+    background-image:
+        radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%),
+        /* White gradient circle */
         radial-gradient(circle farthest-corner at top left, rgba(212, 193, 236, 1) 0%, rgba(212, 193, 236, 0) 50%),
         radial-gradient(circle farthest-side at top right, rgba(115, 108, 237, 1) 0%, rgba(115, 108, 237, 0) 10%),
         radial-gradient(circle farthest-corner at bottom right, rgba(255, 107, 107, 1) 0%, rgba(255, 107, 107, 0) 50%),
@@ -16,9 +17,12 @@
 }
 
 @keyframes animate-gradients {
-    0%, 100% {
+
+    0%,
+    100% {
         background-size: 70% 70%, 50% 50%, 10% 10%, 50% 50%, 50% 50%, 100% 100%;
     }
+
     50% {
         background-size: 70% 70%, 60% 60%, 20% 20%, 60% 60%, 60% 60%, 110% 110%;
     }
