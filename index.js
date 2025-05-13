@@ -242,13 +242,13 @@ const results = document.getElementById('results');
 const inputField = document.getElementById('search');
 const bt1 = document.getElementById('reset');
 
-// Обработчик ввода
+// event listener on input
 inputField.addEventListener('input', (event) => {
-  const query = event.target.value.toLowerCase(); // Текст из поля ввода в нижнем регистре
-  results.innerHTML = ''; // Очистить предыдущие результаты
+  const query = event.target.value.toLowerCase(); // text from field
+  results.innerHTML = ''; // clear prev results
 
   if (query) {
-    // Фильтруем страны по введенному тексту
+    // filter countries
     Object.entries(data).forEach(([country, capital]) => {
       if (country.toLowerCase().startsWith(query)) {
         const countryRow = document.createElement('div');
@@ -256,12 +256,11 @@ inputField.addEventListener('input', (event) => {
         const countrySpan = document.createElement('span');
         countrySpan.textContent = country;
 
-        // Create a span for the capital and add bold styling
         const capitalSpan = document.createElement('span');
         capitalSpan.textContent = capital;
         capitalSpan.classList.add('font-bold', 'text-blue-950');
 
-        // Append country span, dash span, and capital span to the container div
+        // some styling made by Tim
         countrySpan.classList.add('text-neutral-800', 'text-xl', 'transform', 'transition', 'duration-100', 'hover:scale-125');
         capitalSpan.classList.add('text-neutral-800', 'text-xl', 'transform', 'transition', 'duration-100', 'hover:scale-125');
         countryRow.appendChild(countrySpan);
@@ -273,39 +272,36 @@ inputField.addEventListener('input', (event) => {
   }
 });
 
-// Обработчик Ctrl + R для сброса
+// ctrl r event listener
 inputField.addEventListener('keydown', (event) => {
-  if (event.ctrlKey && event.key === 'r') { // Проверка комбинации Ctrl + R
-    event.preventDefault(); // Предотвращение стандартного действия (обновления страницы)
-    inputField.value = ''; // Сброс ввода
-    results.innerHTML = ''; // Очистка результатов поиска
+  if (event.ctrlKey && event.key === 'r') { // checking event
+    event.preventDefault(); // prevent reload full
+    inputField.value = ''; 
+    results.innerHTML = '';
     inputField.focus();
   }
 });
 
-// Обработчик для кнопки Reset
+// reset event listener
 bt1.addEventListener('click', () => {
-  inputField.value = ''; // Очистить поле ввода
-  results.innerHTML = ''; // Очистить список результатов
-  inputField.focus(); // Вернуть фокус на поле ввода
+  inputField.value = ''; 
+  results.innerHTML = ''; 
+  inputField.focus(); 
 });
 
-// Установить фокус на поле ввода при загрузке страницы
+// focus on input field
 inputField.focus();
 
-// Установить фокус на поле ввода при загрузке страницы
-inputField.focus();
-
-// Select the text input and footer elements
+// select the text input and footer elements
 const textField = document.getElementById('search');
 const footer = document.querySelector('footer');
 
-// Add event listener for focus event to hide the footer
+// add event listener for focus event to hide the footer
 textField.addEventListener('focus', () => {
     footer.style.display = 'none';
 });
 
-// Add event listener for blur event to show the footer
+// add event listener for blur event to show the footer
 textField.addEventListener('blur', () => {
     footer.style.display = 'block';
 });
